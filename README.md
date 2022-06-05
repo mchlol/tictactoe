@@ -69,6 +69,7 @@ if it's a winning move/draw
 
 ## Additional Resources
 [Pure and Simple - Tic Tac Toe with Javascript](https://dev.to/bornasepic/pure-and-simple-tic-tac-toe-with-javascript-4pgn), Borna Šepić  
+[Button that refreshes the page on click](https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click)
 
 ## Method
 
