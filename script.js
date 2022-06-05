@@ -9,34 +9,44 @@ const player2 = createPlayer("player2","O");
 
 let activePlayer = player1;
 
-const gameBoardContainer = document.querySelector('.game-board');
+// game board module
+const gameBoard = (() => {
+    const gameBoardContainer = document.querySelector('.game-board');
+    const display = ["O", "X", "O", "X", "O", "X", "O", "X", "O"];
+    const cells = document.querySelectorAll('.cell');
+    const messageDisplay = document.querySelector('#message-display');
 
-const gameBoard = {
-    cells: document.querySelectorAll('.cell'),
-    display: ["O", "X", "O", "X", "O", "X", "O", "X", "O"]
-};
-
-gameBoard.cells.forEach(cell => {
-    cell.addEventListener('click', () => {
-        handleClick(cell);
+    cells.forEach(cell => {
+        cell.addEventListener('click', () => {
+            handleClick(cell);
+        })
     })
-})
 
-function handleClick(cell) {
-    let selected = document.querySelector(`#${cell.id}`);
-    if (selected.textContent) {
-        console.log("invalid move")
-    } else {
-    selected.textContent = activePlayer.marker;
-    return toggleActivePlayer();
+    const handleClick = (cell) => {
+        let selected = document.querySelector(`#${cell.id}`);
+        if (selected.textContent) {
+            console.warn("invalid move")
+        } else {
+        selected.textContent = activePlayer.marker;
+        return toggleActivePlayer();
+        }
     }
-}
+    
+    const toggleActivePlayer = () => {
+        if (activePlayer === player1) {
+            activePlayer = player2;
+        } else if (activePlayer === player2) {
+            activePlayer = player1;
+        }
+        messageDisplay.textContent = `${activePlayer.marker}'s turn`;
+    
+    };
 
-function toggleActivePlayer() {
-    if (activePlayer === player1) {
-        activePlayer = player2;
-    } else if (activePlayer === player2) {
-        activePlayer = player1;
+    return {
+        cells,
+        display,
     }
-    console.log(`${activePlayer.name}'s turn`);
-};
+})();
+
+
+
