@@ -17,6 +17,7 @@ h2 {
 }
 
 main {
+    border: 1px solid palevioletred;
     width: 80%;
     margin: 0 auto;
     text-align: center;
