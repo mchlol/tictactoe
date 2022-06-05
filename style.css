@@ -51,3 +51,12 @@ main {
     margin: 1em;
     font-style: italic;
 }
+
+#play-again {
+    margin: 1em;
+    padding: 1em;
+    background-color: palevioletred;
+    color: #fff;
+    border: none;
+    border-radius: 0.5em;
+}
