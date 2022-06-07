@@ -65,9 +65,10 @@ create a game board module
     show which players turn it is in the message display  
   return the cells and gameState variables from the module so they are the only public variables
 create a variable to store the possible scenarios where someone has won or it's a draw
-
-    check how many cells in a row have been filled by the same player  
-    check if all cells have been filled without any winner  
+  eg if theres an X in cells 0, 1, and 2, that's three X's in a row.
+compare the game state to the winning combos
+    check which cells have been marked by the same player  
+    check if all cells have been marked without any winner  
   if it's a winning move/draw  
   game is over, prevent further moves
   display winning player or draw  
