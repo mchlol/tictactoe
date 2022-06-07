@@ -37,50 +37,45 @@ As the game board is an array we can check the contents of each to see if someon
 
 5. **Clean up the interface to allow players to put in their names, include a button to start/restart the game and add a display element that congratulates the winning player!**  
 
-### Pseudocode
-```
-create a player factory function  
-  create player1 with marker X  
-  create player with marker O  
-create a variable activePlayer set to player1  
-put a click event listener on each cell in the grid  
-player1 clicks on a cell on the gameboard  
-the cell will be populated with the players marker   
-update game state  
-  eg if cell2 was clicked, gameState[2] = player1.marker
-toggle the active player
-player2 clicks on a cell on the gameboard  
-  if there's already a marker do nothing  
-  else display current player's marker in cell   
-for each click we should check if it's a winning move
-  check how many cells in a row have been filled by the same player  
-or if it's a draw
-  check if all cells have been filled without any winner
-if it's a winning move/draw
-  game is over, prevent further moves
-  display winning player or draw  
-  display option to play again  
-  
+### Algorithm
 ```
 
-create a player factory function  
-  create player1 with marker X  
-  create player with marker O  
-create a variable activePlayer set to player1  
-put a click event listener on each cell in the grid  
-player1 clicks on a cell on the gameboard  
-the cell will be populated with the players marker   
-update game state  
-  eg if cell2 was clicked, gameState[2] = player1.marker
-set active player to player2 
-player2 clicks on a cell on the gameboard  
-  if there's already a marker do nothing  
-  else display current player's marker in cell   
-for each click we should check if it's a winning move/draw  
-if it's a winning move/draw
+create a factory function to create players that takes a name and marker  
+use the factory function to create players  
+create a variable player1 with marker X  
+create a variable player2 with marker O 
+create a variable to store the active player  
+create a game board module  
+  create a variable to access the grid  
+  create a variable to set the game state - an array with an index to correspond to each cell in the grid  
+  create a variable to access a div where we can show a message to the players  
+  create a variable to hold all the cells  
+  add an event listener to the cells, which will run a callback function when a cell is clicked  
+  create a function to run when a cell is clicked  
+    create a variable to store the cell that was clicked, accessed by its id in the html  
+    check if the cell already has a marker  
+      alert the user that is an invalid move  
+      wait for another click  
+    else show the active player marker in the cell 
+    create a variable to store which cell was clicked - accessed by its dataset attribute   
+    access the corresponding index in the gameState array  
+    change the active player  
+  create a function to change the active player  
+    check which player is active and set it to the other player  
+    show which players turn it is in the message display  
+  return the cells and gameState variables from the module so they are the only public variables
+create a variable to store the possible scenarios where someone has won or it's a draw
+
+    check how many cells in a row have been filled by the same player  
+    check if all cells have been filled without any winner  
+  if it's a winning move/draw  
   game is over, prevent further moves
   display winning player or draw  
   display option to play again  
+if it's not a win or draw continue play 
+
+```
+
 
 ## Possible Upgrades
 - dice roll or coin toss etc to determine who plays first  
