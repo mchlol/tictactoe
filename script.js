@@ -9,10 +9,10 @@ const createPlayer = (name,marker) => {
 const player1 = createPlayer("player1","X");
 const player2 = createPlayer("player2","O");
 
-// create an variable to store the active player
+// create a variable to store the active player
 let activePlayer = player1;
 
-// game board module
+// create a game board module
 const gameBoard = (() => {
     // create a variable to access the grid
     const gameBoardContainer = document.querySelector('.game-board');
@@ -83,3 +83,4 @@ const winningCombos = [
     "", "", ""
     ],
 ];
+
