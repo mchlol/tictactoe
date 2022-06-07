@@ -49,6 +49,7 @@ const gameBoard = (() => {
         selected.textContent = activePlayer.marker;
         // create a variable to store which cell was clicked - accessed by its dataset attribute
         let cellNumber = parseInt(cell.dataset.index);
+        console.log(cellNumber);
         // access the corresponding index in the gameState array
         gameState[cellNumber] = activePlayer.marker;
         // change the active player
@@ -75,12 +76,31 @@ const gameBoard = (() => {
     }
 })();
 
+
 // create a variable to store the possible scenarios where someone has won or it's a draw
 const winningCombos = [
-    [
-    "", "", "", 
-    "", "", "", 
-    "", "", ""
-    ],
-];
+    // eg if theres an X in cells 0, 1, and 2, that's three X's in a row.
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+]
 
+// compare the game state to the winning combos
+    // check which cells have been marked by the same player  
+    // check the position of those cells to see if they are in a row
+    // check if all cells have been marked without any of the same marker in a row
+
+/*
+
+    
+  if it's a winning move/draw  
+    game is over, prevent further moves
+    display winning player or draw  
+    display option to play again  
+if it's not a win or draw continue play 
+*/
