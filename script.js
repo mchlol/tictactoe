@@ -16,6 +16,8 @@ let activePlayer = player1;
 const gameBoard = (() => {
     // create a variable to access the grid
     const gameBoardContainer = document.querySelector('.game-board');
+    const playAgainBtn = document.querySelector("#play-again");
+    playAgainBtn.style = "visibility: hidden";
 
     // create a variable to set the game state - an array with an index to correspond to each cell in the grid
     const gameState = [
@@ -59,6 +61,7 @@ const gameBoard = (() => {
 
         if (checkWinner(activePlayer.marker)) {
             gameBoardContainer.style = "display: none";
+            playAgainBtn.style = "visibility: visible";
             return messageDisplay.textContent = `${activePlayer.marker} wins!`
         }
         // change the active player
