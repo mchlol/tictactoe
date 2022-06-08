@@ -78,36 +78,15 @@ if it's not a win or draw continue play
 ```
 
 
-## Possible Upgrades
+## Potential features
 - dice roll or coin toss etc to determine who plays first  
 - alert if someone plays a cell that's already marked  
 - players can choose a marker colour/icon  
+- AI for a single player to play against computer
 
 ## Additional Resources
 [Pure and Simple - Tic Tac Toe with Javascript](https://dev.to/bornasepic/pure-and-simple-tic-tac-toe-with-javascript-4pgn), Borna Šepić  
-[The World’s Most Empowering Tic-Tac-Toe JavaScript Tutorial](https://javascript.plainenglish.io/the-worlds-most-empowering-tic-tac-toe-javascript-tutorial-a889e4c20883), Anna Peterson
-[JavaScript TicTacToe if... Winner detection (answer)](https://stackoverflow.com/a/64570551/17232226)
+[The World’s Most Empowering Tic-Tac-Toe JavaScript Tutorial](https://javascript.plainenglish.io/the-worlds-most-empowering-tic-tac-toe-javascript-tutorial-a889e4c20883), Anna Peterson  
+[JavaScript TicTacToe if... Winner detection (answer)](https://stackoverflow.com/a/64570551/17232226)  
 [Button that refreshes the page on click](https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click)
-
-## Method
-
-Write a factory function to create player objects;  
-```
-const createPlayer = (name,marker) => {
-    return {
-        name, marker
-    }
-};
-```
-Create the two players and set their names and markers;  
-```
-const player1 = createPlayer("player1","X");
-const player2 = createPlayer("player2","O");
-```
-
-Set the default active player on page load;  
-
-```
-let activePlayer = player1;
-```
 
