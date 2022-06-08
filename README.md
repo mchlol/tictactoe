@@ -1,5 +1,7 @@
 # tictactoe
 
+(Live)[https://mchlol.github.io/tictactoe/]
+
 *AKA Naughts and Crosses. The only time you'll ever call 0 "naught".*
 
 Just another tic tac toe for [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-tic-tac-toe) part of the Full Stack JavaScript Path. 
