@@ -49,9 +49,18 @@ const gameBoard = (() => {
         selected.textContent = activePlayer.marker;
         // create a variable to store which cell was clicked - accessed by its dataset attribute
         let cellNumber = parseInt(cell.dataset.index);
-        console.log(cellNumber);
         // access the corresponding index in the gameState array
         gameState[cellNumber] = activePlayer.marker;
+        console.log(`gameState: ${gameState}`)
+        console.log(`cellNumber: ${cellNumber}`);
+        console.log(`gameState[cellNumber]: ${gameState[cellNumber]}`);
+        console.log(`gameState[0]: ${gameState[0]}`)
+        
+
+        if (checkWinner(activePlayer.marker)) {
+            gameBoardContainer.style = "display: none";
+            return messageDisplay.textContent = `${activePlayer.marker} wins!`
+        }
         // change the active player
         return toggleActivePlayer();
         }
@@ -73,6 +82,7 @@ const gameBoard = (() => {
     return {
         cells,
         gameState,
+        messageDisplay,
     }
 })();
 
@@ -91,6 +101,58 @@ const winningCombos = [
 ]
 
 // compare the game state to the winning combos
+function checkWinner(marker) {
+    let gameOver = false;
+    if (
+        gameBoard.gameState[0] === marker &&
+        gameBoard.gameState[1] === marker &&
+        gameBoard.gameState[2] === marker
+        ) {
+            return gameOver = true;
+        } else if (
+            gameBoard.gameState[3] === marker &&
+            gameBoard.gameState[4] === marker &&
+            gameBoard.gameState[5] === marker
+        ) {
+            return gameOver = true;
+        } else if (
+            gameBoard.gameState[6] === marker &&
+            gameBoard.gameState[7] === marker &&
+            gameBoard.gameState[8] === marker
+        ) {
+            return gameOver = true;
+        } else if (
+            gameBoard.gameState[0] === marker &&
+            gameBoard.gameState[3] === marker &&
+            gameBoard.gameState[6] === marker
+        ) {
+            return gameOver = true;
+        } else if (
+            gameBoard.gameState[1] === marker &&
+            gameBoard.gameState[4] === marker &&
+            gameBoard.gameState[7] === marker
+        ) {
+            return gameOver = true;
+        } else if (
+            gameBoard.gameState[2] === marker &&
+            gameBoard.gameState[5] === marker &&
+            gameBoard.gameState[8] === marker
+        ) {
+            return gameOver = true;
+        } else if (
+            gameBoard.gameState[0] === marker &&
+            gameBoard.gameState[4] === marker &&
+            gameBoard.gameState[8] === marker
+        ) {
+            return gameOver = true;
+        } else if (
+            gameBoard.gameState[2] === marker &&
+            gameBoard.gameState[4] === marker &&
+            gameBoard.gameState[6] === marker
+        ) {
+            return gameOver = true;
+        }
+};
     // check which cells have been marked by the same player  
     // check the position of those cells to see if they are in a row
     // check if all cells have been marked without any of the same marker in a row
