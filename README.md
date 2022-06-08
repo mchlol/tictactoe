@@ -1,6 +1,6 @@
 # tictactoe
 
-(Live)[https://mchlol.github.io/tictactoe/]
+[Live](https://mchlol.github.io/tictactoe/)
 
 *AKA Naughts and Crosses. The only time you'll ever call 0 "naught".*
 
