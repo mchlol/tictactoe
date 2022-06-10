@@ -73,7 +73,7 @@ create a variable to access a div where we can show a message to the players
     create the toggle player function
       check which player is active and set it to the other player
       show which players turn it is in the message display
-  return the cells and gameState variables from the module so they are the only public variables
+  return only the game state from the module so all other variables and functions are private
   
 ```
 
