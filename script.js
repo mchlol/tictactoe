@@ -12,9 +12,6 @@ const player2 = createPlayer("player2","O");
 // create a variable to store the active player
 let activePlayer = player1;
 
-// create a variable to store if the game is over
-let gameOver = false;
-
 // create a variable to store how many turns there have been
 let turns = 0;
 
@@ -37,7 +34,7 @@ const gameBoard = (() => {
     ];
 
             // create a variable to hold a nested array of all the possible winning moves
-            const winningMoves = [ // this is inside the click handler
+            const winningMoves = [ 
             // eg if theres an X in cells 0, 1, and 2, that's three X's in a row.
             [0,1,2],
             [3,4,5],
@@ -62,13 +59,13 @@ const gameBoard = (() => {
         })
     })
 
-    // create a function to run when a cell is clicked
+    // create the callback function to act as our click handler
     const handleClick = (cell) => {
-        // create a variable to store the cell that was clicked, accessed by its id in the html
+        // create a variable to store the cell that was clicked
         let selected = document.querySelector(`#${cell.id}`);
         // check if the cell already has a marker
         if (selected.textContent) {
-            console.warn("Invalid move");
+            alert("Invalid move");
         } else {
         // show the active player marker in the cell
         selected.textContent = activePlayer.marker;
@@ -82,8 +79,6 @@ const gameBoard = (() => {
         // check if the gameState array has the same marker in each nested array
         let winner;
         const checkWinner = (marker) => {
-            console.log(`checking if ${marker} won...`)
-
             // first check there's something in the first index of the nested array, then check it's the same value as the other 2 indexes
             winningMoves.forEach(function(combo, index) {
                 if (gameState[combo[0]] && 
@@ -102,17 +97,17 @@ const gameBoard = (() => {
             // show the play again button
             playAgainBtn.style = "visibility: visible";
              // display the winner
-            messageDisplay.textContent = `${activePlayer.marker} wins!`;
+            messageDisplay.textContent = `${winner} wins!`;
         } else if (gameState.includes("")) {
-            // there are still empty cells
-            console.log("continue play");
+            // there are still empty cells, continue play
             toggleActivePlayer();
         } else {
+            // it's a tie
             gameBoardContainer.style = "display: none";
             playAgainBtn.style = "visibility: visible";
             messageDisplay.textContent = "It's a TIE!!!!";
         }
-        
+
 
         /*  this could be a switch statement?
         if (winner) {
@@ -136,9 +131,8 @@ const gameBoard = (() => {
         messageDisplay.textContent = `${activePlayer.marker}'s turn`;
     
     };
-    // return the cells and gameState variables from the module so they are the only public variables
+    // return the gameState from the module so it is the only public variable
     return {
-        cells,
         gameState,
     }
 })();
