@@ -49,10 +49,10 @@ create a variable player2 with marker O
 create a variable to store the active player  
 create a game board module  
   create a variable to access the grid  
-  create a variable to set the game state - an array with an index to correspond to each cell in the grid  
+  create a variable to set the game state, set to an array with an index for each cell in the grid  
   create a variable to access a div where we can show a message to the players  
   create a variable to hold all the cells  
-  add an event listener to the cells, which will run a callback function when a cell is clicked  
+  add an event listener to the cells  
   create a function to run when a cell is clicked  
     create a variable to store the cell that was clicked, accessed by its id in the html  
     check if the cell already has a marker  
