@@ -49,15 +49,18 @@ create a variable player2 with marker O
 create a variable to store the active player  
 create a game board module  
   create a variable to access the grid  
-  create a variable to set the game state, set to an array with an index for each cell in the grid  
-  create a variable to access a div where we can show a message to the players  
+  create a varible to access the play again button  
+    hide the button on page load - so we can display it when the game is over 
+create a variable to set the game state, set to an array with an index for each cell in the grid   
+create a variable to store the possible scenarios where someone has won or it's a draw
+  eg if theres an X in cells 0, 1, and 2 of the game state array, that's three X's in a row - a win  
+create a variable to access a div where we can show a message to the players  
   create a variable to hold all the cells  
   add an event listener to the cells  
   create a function to run when a cell is clicked  
     create a variable to store the cell that was clicked, accessed by its id in the html  
     check if the cell already has a marker  
       alert the user that is an invalid move  
-      wait for another click  
     else show the active player marker in the cell 
     create a variable to store which cell was clicked - accessed by its dataset attribute   
     access the corresponding index in the gameState array  
@@ -66,8 +69,6 @@ create a game board module
     check which player is active and set it to the other player  
     show which players turn it is in the message display  
   return the cells and gameState variables from the module so they are the only public variables
-create a variable to store the possible scenarios where someone has won or it's a draw
-  eg if theres an X in cells 0, 1, and 2, that's three X's in a row.
 compare the game state to the winning combos
     check which cells have been marked by the same player  
     check if all cells have been marked without any winner  
