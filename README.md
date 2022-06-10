@@ -15,27 +15,21 @@ This project is for practising using factory functions & the module pattern for 
 - a 3 x 3 grid for the game board
 - player1 and player2 markers X and O
 - display to show when someone has won  
+- button to refresh when game is over  
 
-*If you only ever need ONE of something use a module. If you need multiples of something, create them with factories.*
+*"If you only ever need ONE of something use a module. If you need multiples of something, create them with factories."*
 
 The players will be stored in objects. 
-The game board and all functionality will be inside a module.
+The game board and all functionality will be inside a module.  
 
-We can store the game board itself in an array;  
-`const board = ["","","","","","","","",""];`
 
 2. **Write a function to display the contents of the gameboard on the page.**  
-We can access a specific point in the board eg the first cell with `board[0]`
-We can also target a cell in the board through the DOM. So we need to tie those two things together. 
 
 3. **Build the functions to allow players to add marks to a spot on the board.** 
-Each cell needs to have its own ID. We'll use an event listener to update the contents of a cell with a player marker when it has been clicked. 
-Based on which players turn it is, a click on a cell should populate it with the current player's marker. 
 
-*Each little piece of functionality should be able to fit in the game, player or gameboard objects.. but take care to put them in “logical” places.*  
+*"Each little piece of functionality should be able to fit in the game, player or gameboard objects.. but take care to put them in “logical” places."*  
 
 4. **Build the logic that checks for when the game is over! Should check for 3-in-a-row and a tie.**  
-As the game board is an array we can check the contents of each to see if someone has won.  
 
 5. **Clean up the interface to allow players to put in their names, include a button to start/restart the game and add a display element that congratulates the winning player!**  
 
@@ -51,19 +45,26 @@ create a game board module
   create a variable to access the grid  
   create a varible to access the play again button  
     hide the button on page load - so we can display it when the game is over 
-create a variable to set the game state, set to an array with an index for each cell in the grid   
-create a variable to store the possible scenarios where someone has won or it's a draw
+create a variable to set the game state, set to an array with an index for each cell in the grid  
+create a variable to hold a nested array of all the possible winning moves  
   eg if theres an X in cells 0, 1, and 2 of the game state array, that's three X's in a row - a win  
 create a variable to access a div where we can show a message to the players  
   create a variable to hold all the cells  
   add an event listener to the cells  
-  create a function to run when a cell is clicked  
-    create a variable to store the cell that was clicked, accessed by its id in the html  
+  create the callback function to act as our click handler
+    create a variable to store the cell that was clicked
     check if the cell already has a marker  
       alert the user that is an invalid move  
     else show the active player marker in the cell 
-    create a variable to store which cell was clicked - accessed by its dataset attribute   
-    access the corresponding index in the gameState array  
+    create a variable to store which cell was clicked - accessed by its dataset attribute - the dataset attribute is a string so convert it to a number  
+    access the corresponding index in the gameState array and update it to the active player marker  
+    check if the active player has made a winning move
+      check if the game state array has the same marker in each nested array
+        loop through all the winning moves arrays
+          check if the first index in the nested array has a marker in the game state array  
+          then check if that marker is in the other two indexes of the nested array - using logical AND  
+      
+
     change the active player  
   create a function to change the active player  
     check which player is active and set it to the other player  
@@ -83,11 +84,11 @@ if it's not a win or draw continue play
 
 ## Potential features
 - dice roll or coin toss etc to determine who plays first  
-- alert if someone plays a cell that's already marked  
 - players can choose a marker colour/icon  
-- AI for a single player to play against computer
+- AI for a single player to play against computer  
+- some animation would be neat  
 
-## Additional Resources
+## Additional Resources Used
 [Pure and Simple - Tic Tac Toe with Javascript](https://dev.to/bornasepic/pure-and-simple-tic-tac-toe-with-javascript-4pgn), Borna Šepić  
 [The World’s Most Empowering Tic-Tac-Toe JavaScript Tutorial](https://javascript.plainenglish.io/the-worlds-most-empowering-tic-tac-toe-javascript-tutorial-a889e4c20883), Anna Peterson  
 [JavaScript TicTacToe if... Winner detection (answer)](https://stackoverflow.com/a/64570551/17232226)  
