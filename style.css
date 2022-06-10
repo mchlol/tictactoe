@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Rock+Salt&display=swap');
 
+:root {
+    --primary: palevioletred;
+    --secondary: #A4546E;
+    --accent: #E494AE;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -14,7 +20,12 @@ header {
 }
 
 a {
+    color: var(--secondary);
     font-weight: bold;
+}
+
+a:hover {
+    color: var(--accent);
 }
 
 h1,
@@ -32,7 +43,6 @@ h2 {
 }
 
 main {
-    border: 1px solid palevioletred;
     width: 80%;
     margin: 0 auto;
     text-align: center;
@@ -51,7 +61,7 @@ main {
 
 .cell {
     background-color: #fff;
-    border: 5px solid palevioletred;
+    border: 5px solid var(--primary);
     padding: 0.5em;
     width: 50px;
     height: 50px;
@@ -70,10 +80,14 @@ main {
 #play-again {
     margin: 1em;
     padding: 1em;
-    background-color: palevioletred;
+    background-color: var(--primary);
     color: #fff;
     border: none;
     border-radius: 0.5em;
+}
+
+#play-again:hover {
+    background-color: var(--accent);
 }
 
 footer {
