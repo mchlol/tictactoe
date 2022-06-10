@@ -85,8 +85,9 @@ create a variable to access a div where we can show a message to the players
 - some animation would be neat  
 
 ## Additional Resources Used
-[Pure and Simple - Tic Tac Toe with Javascript](https://dev.to/bornasepic/pure-and-simple-tic-tac-toe-with-javascript-4pgn), Borna Šepić  
-[The World’s Most Empowering Tic-Tac-Toe JavaScript Tutorial](https://javascript.plainenglish.io/the-worlds-most-empowering-tic-tac-toe-javascript-tutorial-a889e4c20883), Anna Peterson  
-[JavaScript TicTacToe if... Winner detection (answer)](https://stackoverflow.com/a/64570551/17232226)  
-[Button that refreshes the page on click](https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click)
+- [Pure and Simple - Tic Tac Toe with Javascript](https://dev.to/bornasepic/pure-and-simple-tic-tac-toe-with-javascript-4pgn), Borna Šepić  
+- [The World’s Most Empowering Tic-Tac-Toe JavaScript Tutorial](https://javascript.plainenglish.io/the-worlds-most-empowering-tic-tac-toe-javascript-tutorial-a889e4c20883), Anna Peterson  
+- [JavaScript TicTacToe if... Winner detection (answer)](https://stackoverflow.com/a/64570551/17232226)  
+- [Button that refreshes the page on click](https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click)  
+- [How to keep your footer where it belongs](https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/#:~:text=A%20footer%20is%20the%20last,is%20taller%20than%20the%20viewport.)  
 
