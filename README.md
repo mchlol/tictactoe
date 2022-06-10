@@ -63,22 +63,18 @@ create a variable to access a div where we can show a message to the players
         loop through all the winning moves arrays
           check if the first index in the nested array has a marker in the game state array  
           then check if that marker is in the other two indexes of the nested array - using logical AND  
-      
-
-    change the active player  
-  create a function to change the active player  
-    check which player is active and set it to the other player  
-    show which players turn it is in the message display  
+    if someone has won  
+      hide the game board
+      display the play again button
+      show the winner in the message display
+    if there are still empty cells in the game state
+      toggle the active player
+    else hide the game board, display the play again button, show it's a tie in the message display
+    create the toggle player function
+      check which player is active and set it to the other player
+      show which players turn it is in the message display
   return the cells and gameState variables from the module so they are the only public variables
-compare the game state to the winning combos
-    check which cells have been marked by the same player  
-    check if all cells have been marked without any winner  
-  if it's a winning move/draw  
-  game is over, prevent further moves
-  display winning player or draw  
-  display option to play again  
-if it's not a win or draw continue play 
-
+  
 ```
 
 
