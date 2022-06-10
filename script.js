@@ -91,27 +91,26 @@ const gameBoard = (() => {
                     gameState[combo[0]] === gameState[combo[2]] 
                     ) {
                         winner = marker;
-                    
-                    // hide the game board
-                    gameBoardContainer.style = "display: none";
-                    // show the play again button
-                    playAgainBtn.style = "visibility: visible";
-                     // display the winner
-                    
-                    } else if (gameState.includes("")) {
-                        // there are still empty cells
-                        console.log("continue play");
-                    } else {
-                        messageDisplay.textContent = "Tie!";
-                    }
-            })
+            }
+        })
         };
 
         checkWinner(activePlayer.marker);
         if (winner) {
+            // hide the game board
+            gameBoardContainer.style = "display: none";
+            // show the play again button
+            playAgainBtn.style = "visibility: visible";
+             // display the winner
             messageDisplay.textContent = `${activePlayer.marker} wins!`;
-        } else {
+        } else if (gameState.includes("")) {
+            // there are still empty cells
+            console.log("continue play");
             toggleActivePlayer();
+        } else {
+            gameBoardContainer.style = "display: none";
+            playAgainBtn.style = "visibility: visible";
+            messageDisplay.textContent = "It's a TIE!!!!";
         }
         
 
@@ -125,19 +124,6 @@ const gameBoard = (() => {
             it's a tie
         }
         */
-
-        /* if someone has won:
-        // hide the game board
-        gameBoardContainer.style = "display: none";
-        // show the play again button
-        playAgainBtn.style = "visibility: visible";
-        // display the winner
-        return messageDisplay.textContent = `${activePlayer.marker} wins!`
-        */
-
-
-        // change the active player
-        // return toggleActivePlayer();
         }
     }
     
